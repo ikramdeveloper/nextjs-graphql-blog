@@ -17,6 +17,7 @@ const PostItem: React.FC<IPostProps> = ({ post }) => {
   const store = useStore();
   const menuRef = useRef<HTMLUListElement>(null);
   const [openMenu, setOpenMenu] = useState(false);
+  const [isEditClicked, setIsEditClicked] = useState(false);
   const { deletePost } = useDeletePostHook();
 
   const toggleMenu = () => {
@@ -43,6 +44,12 @@ const PostItem: React.FC<IPostProps> = ({ post }) => {
       window.removeEventListener("mousedown", handleClickOutside);
     };
   }, [menuRef]);
+
+  useEffect(() => {
+    if (!openMenu && !store.openModal) {
+      setIsEditClicked(false);
+    }
+  }, [openMenu, store.openModal]);
 
   return (
     <>
@@ -99,6 +106,7 @@ const PostItem: React.FC<IPostProps> = ({ post }) => {
               <li
                 className="w-24 h-7 py-3 px-2 hover:bg-[#f5f5f5] flex items-center gap-2 cursor-pointer transition ease-in duration-300"
                 onClick={() => {
+                  setIsEditClicked(true);
                   store.setOpenModal(true);
                   toggleMenu();
                 }}
@@ -118,9 +126,14 @@ const PostItem: React.FC<IPostProps> = ({ post }) => {
           </div>
         </article>
       </div>
-      <PostModal openModal={store.openModal} setOpenModal={store.setOpenModal}>
-        <CreatePost post={post} />
-      </PostModal>
+      {isEditClicked && (
+        <PostModal
+          openModal={store.openModal}
+          setOpenModal={store.setOpenModal}
+        >
+          <CreatePost post={post} />
+        </PostModal>
+      )}
     </>
   );
 };

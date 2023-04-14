@@ -9,7 +9,14 @@ import { queryClient } from "@/client/requests/graphqlRequestClient";
 import { ToastContainer } from "react-toastify";
 import AuthMiddleware from "@/client/middleware/AuthMiddleware";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({
+  Component,
+  pageProps,
+}: AppProps<{
+  dehydratedState: unknown;
+  requireAuth: boolean;
+  enableAuth: boolean;
+}>) {
   return (
     <CookiesProvider>
       <QueryClientProvider client={queryClient}>

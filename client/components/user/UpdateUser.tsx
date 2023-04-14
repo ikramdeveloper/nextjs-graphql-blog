@@ -1,6 +1,6 @@
 import React from "react";
 import { FormProvider } from "react-hook-form";
-import useUpdateUserHook from "@/pages/profile/hooks/useUpdateUserHook";
+import useUpdateUserHook from "@/client/hooks/useUpdateUserHook";
 import TextInput from "../TextInput";
 import FileUpload from "../FileUpload";
 import LoadingButton from "../LoadingButton";

@@ -3,7 +3,6 @@ import useStore from "@/client/store";
 import {
   useGetProfileQuery,
   GetProfileQuery,
-  useUpdateUserMutation,
 } from "@/client/generated/graphql";
 import graphqlRequestClient from "@/client/requests/graphqlRequestClient";
 import { IUser } from "@/client/lib/types";

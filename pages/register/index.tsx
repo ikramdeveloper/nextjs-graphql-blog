@@ -4,7 +4,7 @@ import { FormProvider } from "react-hook-form";
 import FormInput from "@/client/components/FormInput";
 import LoadingButton from "@/client/components/LoadingButton";
 import FileUploader from "@/client/components/FileUpload";
-import useRegisterHook from "./hooks/useRegisterHook";
+import useRegisterHook from "@/client/hooks/useRegisterHook";
 
 const RegisterPage: NextPage = () => {
   const { methods, handleSubmit, onSubmitHandler, isLoading } =

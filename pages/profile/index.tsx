@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import type { NextPage, GetServerSideProps } from "next";
 import { queryClient } from "@/client/requests/graphqlRequestClient";
 import Header from "@/client/components/Header";
-import useProfileHook from "./hooks/useProfileHook";
+import useProfileHook from "@/client/hooks/useProfileHook";
 import { axiosGetProfile } from "@/client/requests/axiosClient";
 import { GetProfileDocument } from "@/client/generated/graphql";
 import { dehydrate } from "@tanstack/react-query";

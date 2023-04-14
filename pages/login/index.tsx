@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FormProvider } from "react-hook-form";
 import FormInput from "@/client/components/FormInput";
 import LoadingButton from "@/client/components/LoadingButton";
-import useLoginHook from "./hooks/useLoginHook";
+import useLoginHook from "@/client/hooks/useLoginHook";
 
 const LoginPage: NextPage = () => {
   const { methods, handleSubmit, onSubmitHandler, isLoading } = useLoginHook();

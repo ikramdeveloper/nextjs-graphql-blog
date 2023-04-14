@@ -1,5 +1,5 @@
 import { GraphQLClient } from 'graphql-request';
-import { RequestInit } from 'graphql-request/dist/types.dom';
+import { RequestInit } from 'graphql-request/src/types.dom';
 import { useMutation, useQuery, UseMutationOptions, UseQueryOptions } from '@tanstack/react-query';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
@@ -24,6 +24,12 @@ export type Scalars = {
   DateTime: any;
 };
 
+export type ApiResponse = {
+  __typename?: 'ApiResponse';
+  message: Scalars['String'];
+  success: Scalars['Boolean'];
+};
+
 export type LoginInput = {
   email: Scalars['String'];
   password: Scalars['String'];
@@ -36,20 +42,15 @@ export type LoginResponse = {
   success: Scalars['String'];
 };
 
-export type LogoutResponse = {
-  __typename?: 'LogoutResponse';
-  message: Scalars['String'];
-  success: Scalars['String'];
-};
-
 export type Mutation = {
   __typename?: 'Mutation';
   createPost: PostResponse;
   deletePost: PostDeleteResponse;
   loginUser: LoginResponse;
   registerUser: UserResponse;
+  resetPassword: ResetPasswordResponse;
   updatePost: PostResponse;
-  updateUser: LogoutResponse;
+  updateUser: ApiResponse;
 };
 
 
@@ -70,6 +71,11 @@ export type MutationLoginUserArgs = {
 
 export type MutationRegisterUserArgs = {
   input: SignUpInput;
+};
+
+
+export type MutationResetPasswordArgs = {
+  input: ResetPasswordInput;
 };
 
 
@@ -104,7 +110,7 @@ export type PostDeleteResponse = {
 export type PostFilter = {
   limit: Scalars['Float'];
   page: Scalars['Float'];
-  title?: InputMaybe<Scalars['String']>;
+  query?: InputMaybe<Scalars['String']>;
 };
 
 export type PostInput = {
@@ -150,7 +156,7 @@ export type Query = {
   getPost: PostPopulatedResponse;
   getPosts: PostListResponse;
   getProfile: UserResponse;
-  logoutUser: LogoutResponse;
+  logoutUser: ApiResponse;
   refreshToken: LoginResponse;
 };
 
@@ -162,6 +168,18 @@ export type QueryGetPostArgs = {
 
 export type QueryGetPostsArgs = {
   input?: InputMaybe<PostFilter>;
+};
+
+export type ResetPasswordInput = {
+  newPassword: Scalars['String'];
+  oldPassword: Scalars['String'];
+};
+
+export type ResetPasswordResponse = {
+  __typename?: 'ResetPasswordResponse';
+  accessToken: Scalars['String'];
+  message: Scalars['String'];
+  success: Scalars['Boolean'];
 };
 
 export type SignUpInput = {
@@ -255,7 +273,7 @@ export type LoginUserMutation = { __typename?: 'Mutation', loginUser: { __typena
 export type LogoutUserQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type LogoutUserQuery = { __typename?: 'Query', logoutUser: { __typename?: 'LogoutResponse', success: string, message: string } };
+export type LogoutUserQuery = { __typename?: 'Query', logoutUser: { __typename?: 'ApiResponse', success: boolean, message: string } };
 
 export type RefreshTokenQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -274,7 +292,7 @@ export type UpdateUserMutationVariables = Exact<{
 }>;
 
 
-export type UpdateUserMutation = { __typename?: 'Mutation', updateUser: { __typename?: 'LogoutResponse', success: string, message: string } };
+export type UpdateUserMutation = { __typename?: 'Mutation', updateUser: { __typename?: 'ApiResponse', success: boolean, message: string } };
 
 
 export const CreatePostDocument = `

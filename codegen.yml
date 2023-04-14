@@ -8,3 +8,5 @@ generates:
       - typescript-react-query
     config:
       fetcher: graphql-request
+hooks:
+  afterOneFileWrite: 'sed -i -e"s|graphql-request/dist/types\.dom|graphql-request/src/types.dom|g"'

@@ -1,0 +1,14 @@
+query GetProfile {
+  getProfile {
+    success
+    user {
+      _id
+      name
+      email
+      role
+      photo
+      updatedAt
+      createdAt
+    }
+  }
+}

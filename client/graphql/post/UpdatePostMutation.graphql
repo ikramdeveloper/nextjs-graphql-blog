@@ -1,0 +1,14 @@
+mutation UpdatePost($input: UpdatePostInput!, $id: String!) {
+  updatePost(input: $input, id: $id) {
+    success
+    post {
+      _id
+      title
+      content
+      category
+      image
+      createdAt
+      updatedAt
+    }
+  }
+}

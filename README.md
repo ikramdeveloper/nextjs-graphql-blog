@@ -1,48 +1,69 @@
-# NextJS With GraphQL
+# Next.js Blog with GraphQL
 
-Blog Application using NextJS with GraphQL
+This is a blog application built with Next.js and GraphQL, enabling CRUD operations for managing blog posts.
 
----
+## Features
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- Create, Read, Update, and Delete blog posts
+- Next.js for server-side rendering and seamless page transitions
+- GraphQL for efficient data fetching
+- Responsive design for a great user experience on various devices
 
 ## Getting Started
 
-First, run the development server:
+To run this project locally, follow these steps:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+1. Clone the repository:
 
-Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
+   ```bash
+   git clone https://github.com/ikramdeveloper/nextjs-graphql-blog.git
+   ```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+2. Navigate to the project directory:
+   ```bash
+   cd nextjs-graphql-blog
+   ```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3001/api/hello](http://localhost:3001/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Install dependencies
+   ```bash
+   npm install
+   ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+4. Set up the required environment variables. Create a .env file in the root directory and add the necessary variables. You can use the .env.example file as a template.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+5. Run the application:
+   ```bash
+   npm run dev
+   ```
 
-## Learn More
+The application will be accessible at http://localhost:3000.
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project makes use of the following technologies:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Next.js**: A React framework for building web applications.
+- **GraphQL**: A query language for APIs, used here for efficient data fetching.
+- **Zustand**: A state management library for React applications.
+- **Zod**: A TypeScript-first schema declaration and validation library.
+- **Redis**: An in-memory data structure store used as a caching mechanism.
+- **Mongoose**: A MongoDB object modeling tool designed to work in an asynchronous environment.
+- **@typegoose/typegoose**: A TypeScript library that allows you to define Mongoose models using TypeScript classes.
+- **@tanstack/react-query**: A data-fetching library for React applications that makes server state management simple and scalable.
+- **React Hook Form**: A library for managing forms in React applications.
 
 ## Acknowledgment
 
 This project was built with the help of [nextjs-typegraphql repo](https://github.com/wpcodevo/nextjs-typegraphql-api)
+
+## Author Links
+
+👋 Hello, I'm Ikram Ul Haq - Web Developer & Programmer
+
+☕ [Buy Me A Coffee](https://www.buymeacoffee.com/ikramdev)
+
+🚀 Follow Me:
+
+- [LinkedIn](https://www.linkedin.com/in/ikramdeveloper/)
+- [Twitter](https://twitter.com/ikramdeveloper)
+- [StackOverflow](https://stackoverflow.com/users/13859212/ikram-ul-haq)

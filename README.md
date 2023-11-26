@@ -51,6 +51,7 @@ This project makes use of the following technologies:
 - **@typegoose/typegoose**: A TypeScript library that allows you to define Mongoose models using TypeScript classes.
 - **@tanstack/react-query**: A data-fetching library for React applications that makes server state management simple and scalable.
 - **React Hook Form**: A library for managing forms in React applications.
+- **Tailwind CSS**: A utility-first CSS framework for rapidly building custom designs.
 
 ## Acknowledgment
 

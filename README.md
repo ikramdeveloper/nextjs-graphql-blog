@@ -61,7 +61,7 @@ This project was built with the help of [nextjs-typegraphql repo](https://github
 
 👋 Hello, I'm Ikram Ul Haq - Web Developer & Programmer
 
-☕ [Buy Me A Coffee](https://www.buymeacoffee.com/ikramdev)
+☕ [Buy Me A Coffee](https://www.buymeacoffee.com/ikramdeveloper)
 
 🚀 Follow Me:
 
